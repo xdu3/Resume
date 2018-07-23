@@ -1,0 +1,261 @@
+﻿@model Xin.Models.Everything
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<div>
+    <h3>Profile</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Profiles.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profiles.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profiles.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profiles.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profiles.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profiles.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profiles.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profiles.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profiles.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Profiles.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Profiles.Id">Edit</a>
+</div>
+<hr />
+<h3>Descriptions</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Descriptions.Title)*@
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.FullDes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descriptions.Title)
+                </td>
+                <td></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Descriptions.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Descriptions.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Descriptions.Id">Delete</a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <ul>
+                        @foreach (var DESDetailitem in item.DesDetails)
+                        {
+                            <li>
+                                @Html.DisplayFor(modelItem => DESDetailitem.Detail)
+
+                            </li>
+
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                    @foreach (var DESDetailitem in item.DesDetails)
+                    {
+
+                        <li>
+                            <a asp-action="Edit" asp-route-id="@DESDetailitem.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@DESDetailitem.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@DESDetailitem.Id">Delete</a>
+                        </li>
+                    }
+                        </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<h3>Skills</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td></td>
+            <td>
+                <ul>
+                    @foreach (var item in Model.Skills)
+                    {
+                        <li class="col-lg-2">
+                            <p>
+                                @Html.DisplayFor(modelItem => item.SkillName)
+
+                            </p>
+                            <p>
+                                @Html.DisplayFor(modelItem => item.LevelYear)
+                            </p>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </li>
+
+                    }
+                </ul>
+            </td>
+
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h3>Eduction</h3>
+
+
+@foreach (var item in Model.Eductions)
+{
+    <div>
+
+        <h5><strong> @Html.DisplayFor(modelItem => item.Program)</strong></h5>
+        <p>@Html.DisplayFor(modelItem => item.StartTime) - @Html.DisplayFor(modelItem => item.EndTime)</p>
+        <p>@Html.DisplayFor(modelItem => item.SchoolName)</p>
+        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+    </div>
+
+}
+<hr />
+<h3>Project</h3>
+
+
+@foreach (var item in Model.Projects)
+{
+    <div>
+
+        <h5><strong> @Html.DisplayFor(modelItem => item.ProjectName)</strong></h5>
+        <p>@Html.DisplayFor(modelItem => item.TechniqueUsed) </p>
+        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+        <p>@Html.DisplayFor(modelItem => item.result)</p>
+        @{ 
+            var url = "https://" + item.Url;
+        }
+        <a href="@url">@item.Url</a>
+        <br />
+        <br />
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+    </div>
+
+}
+<hr />
+<h3>Work Experience</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Descriptions.Title)*@
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (Model.FullWE != null)
+            {
+                foreach (var item in Model.FullWE)
+                {
+                    <tr>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkExperience.CompanyName) |
+                            @Html.DisplayFor(modelItem => item.WorkExperience.Position) |
+                            @Html.DisplayFor(modelItem => item.WorkExperience.JobType)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.WorkExperience.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.WorkExperience.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.WorkExperience.Id">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <ul>
+                                @foreach (var DESDetailitem in item.WorkExperienceDetail)
+                                {
+                                    <li>
+                                        @Html.DisplayFor(modelItem => DESDetailitem.WEDescription)
+
+                                    </li>
+
+                                }
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                @foreach (var DESDetailitem in item.WorkExperienceDetail)
+                                {
+
+                                    <li>
+                                        <a asp-action="Edit" asp-route-id="@DESDetailitem.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@DESDetailitem.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@DESDetailitem.Id">Delete</a>
+                                    </li>
+                                }
+                                </ul>
+                        </td>
+                    </tr>
+                    }
+                }
+
+            }
+
+    </tbody>
+</table>
+

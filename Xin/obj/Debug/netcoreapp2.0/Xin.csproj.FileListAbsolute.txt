@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\Xin\Xin\bin\Debug\netcoreapp2.0\Xin.deps.json
+C:\Users\Administrator\Desktop\Xin\Xin\bin\Debug\netcoreapp2.0\Xin.runtimeconfig.json
+C:\Users\Administrator\Desktop\Xin\Xin\bin\Debug\netcoreapp2.0\Xin.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\Xin\Xin\bin\Debug\netcoreapp2.0\Xin.dll
+C:\Users\Administrator\Desktop\Xin\Xin\bin\Debug\netcoreapp2.0\Xin.pdb
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.dll
+C:\Users\Administrator\Desktop\Xin\Xin\obj\Debug\netcoreapp2.0\Xin.pdb
